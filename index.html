@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayam Geprek Rempah – Pedas Berani, Bumbu Rempah Asli</title>
+<meta name="description" content="Ayam geprek renyah dengan sambal rempah segar. Pilih level pedas sendiri, pesan lewat WhatsApp dalam satu menit.">
+<meta property="og:title" content="Ayam Geprek Rempah">
+<meta property="og:description" content="Ayam geprek renyah dengan sambal rempah segar. Pesan lewat WhatsApp dalam satu menit.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          sambal: '#C8281E',
+          sambaldark: '#9E1D15',
+          kunyit: '#F2B21C',
+          daun: '#2F5D3A',
+          arang: '#231C18',
+          tulang: '#FFF9EC'
+        },
+        fontFamily: {
+          display: ['"Bricolage Grotesque"', 'Impact', 'sans-serif'],
+          body: ['Figtree', 'system-ui', 'sans-serif']
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: Figtree, system-ui, sans-serif; color: #231C18; }
+  :focus-visible { outline: 3px solid #F2B21C; outline-offset: 3px; }
+  .on-light :focus-visible { outline-color: #C8281E; }
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-plus { transform: rotate(45deg); }
+  .faq-plus { transition: transform .2s; }
+  .flame-bar span { transition: background-color .25s, transform .25s; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body class="bg-white font-body antialiased pb-20 md:pb-0">
+
+<!-- ============ NAV ============ -->
+<header class="bg-sambal text-white">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <a href="#top" class="font-display font-extrabold text-xl tracking-tight">Ayam Geprek Rempah</a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium" aria-label="Navigasi utama">
+      <a href="#keunggulan" class="hover:underline">Keunggulan</a>
+      <a href="#menu" class="hover:underline">Menu</a>
+      <a href="#testimoni" class="hover:underline">Testimoni</a>
+      <a href="#faq" class="hover:underline">FAQ</a>
+      <a href="#pesan" class="bg-kunyit text-arang font-semibold px-4 py-2 rounded-md hover:brightness-95">Pesan sekarang</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="bg-sambal text-white">
+  <div class="max-w-6xl mx-auto px-5 pt-10 pb-16 md:pt-16 md:pb-24 grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+    <div>
+      <h1 class="font-display font-extrabold text-5xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-tight">
+        Geprek yang pedasnya kamu yang atur.
+      </h1>
+      <p class="mt-6 text-lg text-white/90 max-w-md leading-relaxed">
+        Ayam krispi digeprek bersama sambal rempah yang diulek segar setiap hari. Pilih level pedas, isi formulir, pesanan langsung masuk ke WhatsApp kami.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#pesan" id="cta-hero" class="bg-kunyit text-arang font-semibold px-6 py-3.5 rounded-md text-base hover:brightness-95">Pesan lewat WhatsApp</a>
+        <a href="#menu" class="border-2 border-white/70 text-white font-semibold px-6 py-3.5 rounded-md text-base hover:bg-white/10">Lihat menu</a>
+      </div>
+      <p class="mt-5 text-sm text-white/80">Buka setiap hari, 10.00–21.00 WIB. Antar area sekitar kampus dan sekitarnya.</p>
+    </div>
+
+    <!-- Penentu level pedas: elemen interaktif utama -->
+    <div class="bg-tulang text-arang rounded-xl p-6 sm:p-8 on-light shadow-xl" aria-labelledby="lvl-title">
+      <h2 id="lvl-title" class="font-display font-extrabold text-2xl">Seberapa pedas hari ini?</h2>
+      <p class="text-sm text-arang/70 mt-1">Ketuk satu level. Pilihanmu otomatis terbawa ke formulir pesanan.</p>
+
+      <div class="flame-bar mt-6 flex gap-2" aria-hidden="true">
+        <span class="h-3 flex-1 rounded-full bg-arang/15"></span>
+        <span class="h-3 flex-1 rounded-full bg-arang/15"></span>
+        <span class="h-3 flex-1 rounded-full bg-arang/15"></span>
+        <span class="h-3 flex-1 rounded-full bg-arang/15"></span>
+        <span class="h-3 flex-1 rounded-full bg-arang/15"></span>
+      </div>
+
+      <div id="level-buttons" class="mt-5 grid grid-cols-5 gap-2" role="radiogroup" aria-label="Level pedas"></div>
+
+      <div class="mt-6 min-h-[84px]" aria-live="polite">
+        <p id="level-name" class="font-display font-extrabold text-3xl text-sambal"></p>
+        <p id="level-desc" class="mt-1 text-arang/80 leading-relaxed"></p>
+      </div>
+
+      <a href="#pesan" class="mt-4 block text-center bg-sambal text-white font-semibold px-6 py-3.5 rounded-md hover:bg-sambaldark">Pesan dengan level ini</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUE PROPOSITION ============ -->
+<section id="keunggulan" class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+  <h2 class="font-display font-extrabold text-3xl md:text-4xl max-w-xl leading-tight">Kenapa pelanggan balik lagi ke Rempah</h2>
+  <div class="mt-10 grid md:grid-cols-3 gap-x-10 gap-y-8">
+    <div class="border-t-4 border-sambal pt-4">
+      <h3 class="font-display font-extrabold text-xl">Sambal diulek hari ini</h3>
+      <p class="mt-2 text-arang/80 leading-relaxed">Cabai, bawang, dan rempah diulek pagi hari. Tanpa sambal botolan, rasanya segar dan pedasnya bersih.</p>
+    </div>
+    <div class="border-t-4 border-kunyit pt-4">
+      <h3 class="font-display font-extrabold text-xl">Krispi sampai suapan terakhir</h3>
+      <p class="mt-2 text-arang/80 leading-relaxed">Tepung berbumbu kunyit dan ketumbar, digoreng saat pesanan masuk, lalu digeprek di depan sambal.</p>
+    </div>
+    <div class="border-t-4 border-daun pt-4">
+      <h3 class="font-display font-extrabold text-xl">Harga pas untuk dompet mahasiswa</h3>
+      <p class="mt-2 text-arang/80 leading-relaxed">Mulai dari Rp15.000 sudah dapat ayam, nasi, dan lalapan. Ada paket hemat dengan es teh.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU / FEATURE LIST ============ -->
+<!-- TODO: ganti nama menu & harga sesuai data asli mitra -->
+<section id="menu" class="bg-tulang">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <h2 class="font-display font-extrabold text-3xl md:text-4xl leading-tight">Pilih menu favoritmu</h2>
+    <p class="mt-3 text-arang/80 max-w-lg">Semua menu sudah termasuk nasi hangat, lalapan, dan sambal rempah.</p>
+
+    <ul class="mt-10 grid sm:grid-cols-2 gap-5">
+      <li class="bg-white rounded-xl p-6 flex flex-col justify-between border border-arang/10">
+        <div>
+          <div class="flex items-baseline justify-between gap-4">
+            <h3 class="font-display font-extrabold text-xl">Geprek Original</h3>
+            <span class="font-semibold text-sambal">Rp15.000</span>
+          </div>
+          <p class="mt-2 text-arang/75">Ayam krispi digeprek dengan sambal rempah klasik.</p>
+        </div>
+        <a href="#pesan" data-menu="Geprek Original" class="pick-menu mt-5 inline-block font-semibold text-sambal underline underline-offset-4">Pilih menu ini</a>
+      </li>
+      <li class="bg-white rounded-xl p-6 flex flex-col justify-between border border-arang/10">
+        <div>
+          <div class="flex items-baseline justify-between gap-4">
+            <h3 class="font-display font-extrabold text-xl">Geprek Keju Mozzarella</h3>
+            <span class="font-semibold text-sambal">Rp20.000</span>
+          </div>
+          <p class="mt-2 text-arang/75">Keju leleh di atas ayam panas, penyeimbang pedas yang pas.</p>
+        </div>
+        <a href="#pesan" data-menu="Geprek Keju Mozzarella" class="pick-menu mt-5 inline-block font-semibold text-sambal underline underline-offset-4">Pilih menu ini</a>
+      </li>
+      <li class="bg-white rounded-xl p-6 flex flex-col justify-between border border-arang/10">
+        <div>
+          <div class="flex items-baseline justify-between gap-4">
+            <h3 class="font-display font-extrabold text-xl">Geprek Sambal Matah</h3>
+            <span class="font-semibold text-sambal">Rp18.000</span>
+          </div>
+          <p class="mt-2 text-arang/75">Sambal matah serai dan jeruk limau, segar dan wangi.</p>
+        </div>
+        <a href="#pesan" data-menu="Geprek Sambal Matah" class="pick-menu mt-5 inline-block font-semibold text-sambal underline underline-offset-4">Pilih menu ini</a>
+      </li>
+      <li class="bg-daun text-white rounded-xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-baseline justify-between gap-4">
+            <h3 class="font-display font-extrabold text-xl">Paket Hemat + Es Teh</h3>
+            <span class="font-semibold text-kunyit">Rp22.000</span>
+          </div>
+          <p class="mt-2 text-white/85">Geprek original, nasi, lalapan, dan es teh manis. Paling sering dipesan.</p>
+        </div>
+        <a href="#pesan" data-menu="Paket Hemat + Es Teh" class="pick-menu mt-5 inline-block font-semibold text-kunyit underline underline-offset-4">Pilih menu ini</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CARA PESAN (urutan nyata) ============ -->
+<section class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+  <h2 class="font-display font-extrabold text-3xl md:text-4xl leading-tight">Pesan dalam tiga langkah</h2>
+  <ol class="mt-10 grid md:grid-cols-3 gap-8">
+    <li>
+      <p class="font-display font-extrabold text-5xl text-kunyit">1</p>
+      <h3 class="mt-2 font-display font-extrabold text-xl">Isi formulir</h3>
+      <p class="mt-1 text-arang/80">Pilih menu, jumlah, dan level pedas. Tidak perlu daftar akun.</p>
+    </li>
+    <li>
+      <p class="font-display font-extrabold text-5xl text-kunyit">2</p>
+      <h3 class="mt-2 font-display font-extrabold text-xl">Kirim ke WhatsApp</h3>
+      <p class="mt-1 text-arang/80">Pesanan terisi otomatis di chat. Tinggal tekan kirim.</p>
+    </li>
+    <li>
+      <p class="font-display font-extrabold text-5xl text-kunyit">3</p>
+      <h3 class="mt-2 font-display font-extrabold text-xl">Tunggu antar</h3>
+      <p class="mt-1 text-arang/80">Kami konfirmasi total dan estimasi waktu, lalu ayam digoreng.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ SOCIAL PROOF ============ -->
+<!-- TODO: ganti dengan testimoni asli pelanggan mitra -->
+<section id="testimoni" class="bg-arang text-white">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24">
+    <h2 class="font-display font-extrabold text-3xl md:text-4xl leading-tight">Kata mereka yang sudah mencoba</h2>
+    <div class="mt-10 grid md:grid-cols-3 gap-8">
+      <figure>
+        <blockquote class="text-lg leading-relaxed">“Sambalnya beda, ada wangi serai dan kunyitnya. Level 3 sudah bikin keringetan, tapi nagih.”</blockquote>
+        <figcaption class="mt-4 text-sm text-white/70">Rina, mahasiswi</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="text-lg leading-relaxed">“Pesan lewat WhatsApp gampang banget. Dua puluh menit sampai, ayamnya masih krispi.”</blockquote>
+        <figcaption class="mt-4 text-sm text-white/70">Dimas, karyawan</figcaption>
+      </figure>
+      <figure>
+        <blockquote class="text-lg leading-relaxed">“Paket hematnya kenyang dan murah. Langganan tiap Jumat sama anak-anak kos.”</blockquote>
+        <figcaption class="mt-4 text-sm text-white/70">Salsa, anak kos</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="max-w-3xl mx-auto px-5 py-16 md:py-24">
+  <h2 class="font-display font-extrabold text-3xl md:text-4xl leading-tight">Pertanyaan yang sering muncul</h2>
+  <div class="mt-8 divide-y divide-arang/15 border-y border-arang/15 on-light">
+    <details class="py-5 group">
+      <summary class="flex items-center justify-between gap-4 font-semibold text-lg">Apakah bisa pesan untuk acara atau banyak porsi?
+        <span class="faq-plus text-2xl text-sambal" aria-hidden="true">+</span></summary>
+      <p class="mt-3 text-arang/80 leading-relaxed">Bisa. Isi jumlah porsi di formulir atau tulis di kolom catatan. Untuk pesanan di atas 20 porsi, mohon pesan sehari sebelumnya.</p>
+    </details>
+    <details class="py-5">
+      <summary class="flex items-center justify-between gap-4 font-semibold text-lg">Berapa lama pesanan sampai?
+        <span class="faq-plus text-2xl text-sambal" aria-hidden="true">+</span></summary>
+      <p class="mt-3 text-arang/80 leading-relaxed">Rata-rata 20 sampai 30 menit untuk area antar kami. Waktu pasti kami kabari saat konfirmasi di WhatsApp.</p>
+    </details>
+    <details class="py-5">
+      <summary class="flex items-center justify-between gap-4 font-semibold text-lg">Apa saja metode pembayarannya?
+        <span class="faq-plus text-2xl text-sambal" aria-hidden="true">+</span></summary>
+      <p class="mt-3 text-arang/80 leading-relaxed">Tunai saat ayam sampai, transfer bank, atau QRIS. Detailnya kami kirim lewat chat setelah pesananmu dikonfirmasi.</p>
+    </details>
+    <details class="py-5">
+      <summary class="flex items-center justify-between gap-4 font-semibold text-lg">Kalau tidak kuat pedas, ada pilihan lain?
+        <span class="faq-plus text-2xl text-sambal" aria-hidden="true">+</span></summary>
+      <p class="mt-3 text-arang/80 leading-relaxed">Ada. Pilih level 1 untuk sambal dipisah, atau tulis di catatan agar sambal tidak digeprek.</p>
+    </details>
+    <details class="py-5">
+      <summary class="flex items-center justify-between gap-4 font-semibold text-lg">Apakah bahan yang dipakai halal?
+        <span class="faq-plus text-2xl text-sambal" aria-hidden="true">+</span></summary>
+      <p class="mt-3 text-arang/80 leading-relaxed">Ya. Ayam dari pemasok langganan dan seluruh bumbu dibuat sendiri tanpa bahan non-halal.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ FORMULIR PESANAN + CTA ============ -->
+<section id="pesan" class="bg-kunyit">
+  <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 grid md:grid-cols-5 gap-10 md:gap-14">
+    <div class="md:col-span-2">
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl leading-tight">Lapar? Pesan sekarang.</h2>
+      <p class="mt-4 text-lg leading-relaxed text-arang/85">Isi formulir di samping. Setelah menekan tombol, WhatsApp terbuka dengan pesanan yang sudah tertulis rapi. Kamu hanya perlu menekan kirim.</p>
+      <p class="mt-6 text-sm text-arang/75">Lebih suka langsung chat? <a id="cta-direct" href="#" class="font-semibold underline underline-offset-4" target="_blank" rel="noopener">Buka WhatsApp</a></p>
+    </div>
+
+    <form id="order-form" class="md:col-span-3 bg-white rounded-xl p-6 sm:p-8 on-light shadow-lg" novalidate>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="nama" class="block font-semibold text-sm mb-1.5">Nama</label>
+          <input id="nama" name="nama" type="text" autocomplete="name" required class="w-full border border-arang/30 rounded-md px-3.5 py-3 focus:border-sambal focus:outline-none" placeholder="Nama lengkap">
+          <p class="err text-sm text-sambal mt-1 hidden">Isi nama dulu supaya kami tahu siapa yang memesan.</p>
+        </div>
+        <div>
+          <label for="hp" class="block font-semibold text-sm mb-1.5">Nomor WhatsApp</label>
+          <input id="hp" name="hp" type="tel" inputmode="tel" autocomplete="tel" required class="w-full border border-arang/30 rounded-md px-3.5 py-3 focus:border-sambal focus:outline-none" placeholder="08xxxxxxxxxx">
+          <p class="err text-sm text-sambal mt-1 hidden">Masukkan nomor WhatsApp yang aktif, minimal 10 digit.</p>
+        </div>
+        <div>
+          <label for="menu-select" class="block font-semibold text-sm mb-1.5">Menu</label>
+          <select id="menu-select" name="menu" required class="w-full border border-arang/30 rounded-md px-3.5 py-3 bg-white focus:border-sambal focus:outline-none">
+            <option value="">Pilih menu</option>
+            <option value="Geprek Original" data-price="15000">Geprek Original – Rp15.000</option>
+            <option value="Geprek Keju Mozzarella" data-price="20000">Geprek Keju Mozzarella – Rp20.000</option>
+            <option value="Geprek Sambal Matah" data-price="18000">Geprek Sambal Matah – Rp18.000</option>
+            <option value="Paket Hemat + Es Teh" data-price="22000">Paket Hemat + Es Teh – Rp22.000</option>
+          </select>
+          <p class="err text-sm text-sambal mt-1 hidden">Pilih salah satu menu.</p>
+        </div>
+        <div>
+          <label for="qty" class="block font-semibold text-sm mb-1.5">Jumlah porsi</label>
+          <input id="qty" name="qty" type="number" min="1" max="50" value="1" required class="w-full border border-arang/30 rounded-md px-3.5 py-3 focus:border-sambal focus:outline-none">
+        </div>
+        <div class="sm:col-span-2">
+          <label for="level-select" class="block font-semibold text-sm mb-1.5">Level pedas</label>
+          <select id="level-select" name="level" class="w-full border border-arang/30 rounded-md px-3.5 py-3 bg-white focus:border-sambal focus:outline-none"></select>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="alamat" class="block font-semibold text-sm mb-1.5">Alamat antar</label>
+          <textarea id="alamat" name="alamat" rows="2" required class="w-full border border-arang/30 rounded-md px-3.5 py-3 focus:border-sambal focus:outline-none" placeholder="Jalan, nomor, patokan"></textarea>
+          <p class="err text-sm text-sambal mt-1 hidden">Tulis alamat antar supaya kurir tidak tersesat.</p>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="catatan" class="block font-semibold text-sm mb-1.5">Catatan (opsional)</label>
+          <input id="catatan" name="catatan" type="text" class="w-full border border-arang/30 rounded-md px-3.5 py-3 focus:border-sambal focus:outline-none" placeholder="Contoh: sambal dipisah">
+        </div>
+      </div>
+
+      <div class="mt-6 flex items-center justify-between border-t border-arang/15 pt-5">
+        <span class="text-arang/75">Perkiraan total (belum termasuk ongkir)</span>
+        <span id="total" class="font-display font-extrabold text-2xl">Rp0</span>
+      </div>
+
+      <button type="submit" id="cta-submit" class="mt-5 w-full bg-sambal text-white font-semibold text-lg px-6 py-4 rounded-md hover:bg-sambaldark">Kirim pesanan ke WhatsApp</button>
+      <p id="form-status" class="mt-3 text-sm text-daun font-medium hidden" role="status"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-arang text-white/80">
+  <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-sm">
+    <p class="font-display font-extrabold text-white text-lg">Ayam Geprek Rempah</p>
+    <p>Buka setiap hari, 10.00–21.00 WIB</p>
+    <p>© 2026 Ayam Geprek Rempah. Dibuat untuk tugas Riset Pasar Digital.</p>
+  </div>
+</footer>
+
+<!-- CTA tetap di bawah layar untuk mobile -->
+<div class="md:hidden fixed bottom-0 inset-x-0 bg-white border-t border-arang/15 p-3 z-30">
+  <a href="#pesan" id="cta-sticky" class="block text-center bg-sambal text-white font-semibold px-6 py-3.5 rounded-md">Pesan sekarang</a>
+</div>
+
+<script>
+  // ============ KONFIGURASI: ganti dengan nomor WhatsApp mitra (format 62, tanpa + atau 0 di depan) ============
+  const WA_NUMBER = "6281234567890";
+
+  const LEVELS = [
+    { name: "Level 1: Tidak pedas", desc: "Sambal dipisah. Aman untuk yang baru mencoba atau anak-anak." },
+    { name: "Level 2: Sedikit pedas", desc: "Hangat di lidah, masih nyaman sampai suapan terakhir." },
+    { name: "Level 3: Pedas", desc: "Favorit pelanggan. Keringat tipis, rasa rempahnya tetap terasa." },
+    { name: "Level 4: Sangat pedas", desc: "Untuk penggemar pedas. Siapkan es teh di dekatmu." },
+    { name: "Level 5: Pedas gila", desc: "Cabai rawit penuh. Tidak ada jaminan kamu bisa bicara setelahnya." }
+  ];
+
+  const $ = (s) => document.querySelector(s);
+  const btnWrap = $("#level-buttons");
+  const bars = document.querySelectorAll(".flame-bar span");
+  const levelSelect = $("#level-select");
+  let current = 3;
+
+  // isi dropdown level di formulir
+  LEVELS.forEach((l, i) => {
+    const o = document.createElement("option");
+    o.value = i + 1; o.textContent = l.name;
+    levelSelect.appendChild(o);
+  });
+
+  // tombol level di hero
+  LEVELS.forEach((l, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.setAttribute("role", "radio");
+    b.dataset.level = i + 1;
+    b.className = "py-3 rounded-md border-2 border-arang/20 font-display font-extrabold text-xl hover:border-sambal";
+    b.textContent = i + 1;
+    b.setAttribute("aria-label", l.name);
+    btnWrap.appendChild(b);
+  });
+
+  function setLevel(n) {
+    current = n;
+    $("#level-name").textContent = LEVELS[n - 1].name;
+    $("#level-desc").textContent = LEVELS[n - 1].desc;
+    btnWrap.querySelectorAll("button").forEach((b) => {
+      const on = Number(b.dataset.level) === n;
+      b.setAttribute("aria-checked", on);
+      b.classList.toggle("bg-sambal", on);
+      b.classList.toggle("text-white", on);
+      b.classList.toggle("border-sambal", on);
+    });
+    const colors = ["#F2B21C", "#F2B21C", "#E8781C", "#D9421C", "#C8281E"];
+    bars.forEach((bar, i) => {
+      bar.style.backgroundColor = i < n ? colors[n - 1] : "rgba(35,28,24,.15)";
+    });
+    levelSelect.value = n;
+  }
+  btnWrap.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (b) setLevel(Number(b.dataset.level));
+  });
+  levelSelect.addEventListener("change", () => setLevel(Number(levelSelect.value)));
+  setLevel(3);
+
+  // pilih menu dari kartu menu
+  const menuSelect = $("#menu-select");
+  document.querySelectorAll(".pick-menu").forEach((a) => {
+    a.addEventListener("click", () => { menuSelect.value = a.dataset.menu; updateTotal(); });
+  });
+
+  // total
+  const qty = $("#qty");
+  const rupiah = (n) => "Rp" + n.toLocaleString("id-ID");
+  function updateTotal() {
+    const opt = menuSelect.selectedOptions[0];
+    const price = opt && opt.dataset.price ? Number(opt.dataset.price) : 0;
+    const q = Math.max(1, Math.min(50, Number(qty.value) || 1));
+    $("#total").textContent = rupiah(price * q);
+  }
+  menuSelect.addEventListener("change", updateTotal);
+  qty.addEventListener("input", updateTotal);
+
+  // link chat langsung
+  $("#cta-direct").href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent("Halo Ayam Geprek Rempah, saya mau pesan.");
+
+  // validasi + kirim ke WhatsApp
+  const form = $("#order-form");
+  function show(el, bad) { el.parentElement.querySelector(".err").classList.toggle("hidden", !bad); el.setAttribute("aria-invalid", bad); }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const nama = $("#nama"), hp = $("#hp"), alamat = $("#alamat");
+    const okNama = nama.value.trim().length >= 2;
+    const okHp = hp.value.replace(/\D/g, "").length >= 10;
+    const okMenu = menuSelect.value !== "";
+    const okAlamat = alamat.value.trim().length >= 5;
+    show(nama, !okNama); show(hp, !okHp); show(menuSelect, !okMenu); show(alamat, !okAlamat);
+    if (!(okNama && okHp && okMenu && okAlamat)) {
+      form.querySelector("[aria-invalid='true']").focus();
+      return;
+    }
+    const q = Math.max(1, Math.min(50, Number(qty.value) || 1));
+    const price = Number(menuSelect.selectedOptions[0].dataset.price);
+    const lines = [
+      "Halo Ayam Geprek Rempah, saya mau pesan:",
+      "",
+      "Nama: " + nama.value.trim(),
+      "WhatsApp: " + hp.value.trim(),
+      "Menu: " + menuSelect.value + " x" + q,
+      "Level pedas: " + LEVELS[current - 1].name,
+      "Alamat: " + alamat.value.trim(),
+      $("#catatan").value.trim() ? "Catatan: " + $("#catatan").value.trim() : null,
+      "",
+      "Perkiraan total: " + rupiah(price * q) + " (belum termasuk ongkir)"
+    ].filter((x) => x !== null);
+    const url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
+    const status = $("#form-status");
+    status.textContent = "Membuka WhatsApp. Jika tidak terbuka otomatis, izinkan pop-up lalu tekan tombol lagi.";
+    status.classList.remove("hidden");
+    window.open(url, "_blank", "noopener");
+  });
+</script>
+</body>
+</html>
