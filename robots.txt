@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jazzy-biscuit-fd6771.netlify.app/sitemap.xml
